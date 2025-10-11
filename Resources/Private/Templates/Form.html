@@ -1,0 +1,14 @@
+<f:flashMessages />
+<f:form action="result" objectName="measurements" object="{defaultValues}">
+    <div>
+        <label for="height">Height in meters:</label><br>
+        <f:form.textfield id="height" property="height"/>
+    </div>
+    <div>
+        <label for="weight">Weight in kilogramms:</label><br>
+        <f:form.textfield id="weight" property="weight"/>
+    </div>
+    <div>
+        <f:form.submit value="Calculate" class="btn btn-primary"/>
+    </div>
+</f:form>

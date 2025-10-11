@@ -1,0 +1,10 @@
+plugin.tx_bmicalculator_bmicalculator {
+    view {
+        templateRootPath = EXT:bmi_calculator/Resources/Private/Templates/
+        partialRootPath = EXT:bmi_calculator/Resources/Private/Partials/
+        layoutRootPath = EXT:bmi_calculator/Resources/Private/Layouts/
+    }
+    persistence {
+        storagePid = 0
+    }
+}

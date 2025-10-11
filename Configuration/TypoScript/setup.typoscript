@@ -1,0 +1,13 @@
+plugin.tx_bmicalculator_bmicalculator {
+    view {
+        templateRootPaths.0 = EXT:bmi_calculator/Resources/Private/Templates/
+        templateRootPaths.10 = {$plugin.tx_bmicalculator_bmicalculator.view.templateRootPath}
+        partialRootPaths.0 = EXT:bmi_calculator/Resources/Private/Partials/
+        partialRootPaths.10 = {$plugin.tx_bmicalculator_bmicalculator.view.partialRootPath}
+        layoutRootPaths.0 = EXT:bmi_calculator/Resources/Private/Layouts/
+        layoutRootPaths.10 = {$plugin.tx_bmicalculator_bmicalculator.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.plugin.tx_bmicalculator_bmicalculator.persistence.storagePid}
+    }
+}

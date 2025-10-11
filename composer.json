@@ -1,0 +1,32 @@
+{
+    "name": "t3docs/bmi-calculator",
+    "description": "Demonstration of an Extbase extension with a controller but not repositories",
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "TYPO3 Documentation team",
+            "email": ""
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^13.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "T3docs\\BmiCalculator\\": "Classes/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "bmi_calculator"
+        }
+    }
+}
