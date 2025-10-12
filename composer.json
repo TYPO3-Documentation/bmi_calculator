@@ -35,7 +35,9 @@
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "bmi_calculator"
+            "app-dir": ".Build",
+            "extension-key": "bmi_calculator",
+            "web-dir": ".Build/public"
         }
     }
 }
