@@ -8,8 +8,8 @@ declare(strict_types=1);
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
-namespace T3docs\BmiCalculator\Service;
 
+namespace T3docs\BmiCalculator\Service;
 
 use T3docs\BmiCalculator\Domain\Model\Dto\MeasurementsDto;
 

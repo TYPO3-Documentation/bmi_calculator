@@ -8,6 +8,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
+
 namespace T3docs\BmiCalculator\Domain\Model\Dto;
 
 use TYPO3\CMS\Extbase\Annotation\Validate;
@@ -24,10 +25,10 @@ final class MeasurementsDto
     #[Validate(['validator' => 'NotEmpty'])]
     private int $weight;
 
-    public function __construct(?float $height, ?int $weight)
+    public function __construct(?float $height = 0, ?int $weight = 0)
     {
-        $this->height = $height??0;
-        $this->weight = $weight??0;
+        $this->height = $height ?? 0;
+        $this->weight = $weight ?? 0;
     }
 
     public function getHeight(): float
@@ -35,18 +36,31 @@ final class MeasurementsDto
         return $this->height;
     }
 
-    public function setHeight(float $height): void
-    {
-        $this->height = $height;
-    }
-
     public function getWeight(): int
     {
         return $this->weight;
     }
 
-    public function setWeight(int $weight): void
+    public function serialize(): string
     {
-        $this->weight = $weight;
+        return json_encode(
+            [
+                'height' => $this->height,
+                'weight' => $this->weight,
+            ]
+        );
+    }
+
+    public static function deserialize(string $sessionData): self
+    {
+        $data = json_decode($sessionData);
+        if (!is_object($data) || !isset($data->height) || !isset($data->weight)) {
+            print_r($data);
+            throw new \RuntimeException('Deserialization failed: ' . $sessionData);
+        }
+        return new self(
+            height: (float)$data->height,
+            weight: (int)$data->weight,
+        );
     }
 }
