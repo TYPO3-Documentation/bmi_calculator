@@ -3,6 +3,7 @@
 declare(strict_types=1);
 use T3docs\BmiCalculator\Controller\CalculatorController;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+
 ExtensionUtility::configurePlugin(
     'BmiCalculator',
     'BmiCalculator',
